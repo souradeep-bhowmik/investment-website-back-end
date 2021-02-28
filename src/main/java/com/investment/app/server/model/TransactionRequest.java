@@ -17,10 +17,6 @@ public class TransactionRequest {
 
     @Getter
     @Setter
-    private String user;
-
-    @Getter
-    @Setter
     @JsonProperty(value = "product", required = true)
     private String product;
 

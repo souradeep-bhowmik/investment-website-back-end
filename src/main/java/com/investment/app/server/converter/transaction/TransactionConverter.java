@@ -9,7 +9,6 @@ public class TransactionConverter {
 
     public static final Function<TransactionRequest, Transaction> TO_MODEL = request -> {
         Transaction transaction = new Transaction();
-        transaction.setUser(request.getUser());
         transaction.setProduct(request.getProduct());
         transaction.setDate(request.getDate());
         transaction.setSize(request.getSize());

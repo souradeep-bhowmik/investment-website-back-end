@@ -20,11 +20,11 @@ public class TransactionService {
         return (List<Transaction>) transactionRepository.findAll();
     }
 
-    public String saveTransactions(List<TransactionRequest> transactions) {
+    public String saveTransactions(List<TransactionRequest> transactions, String user) {
         Transaction transaction;
         for (TransactionRequest request : transactions) {
             transaction = TransactionConverter.TO_MODEL.apply(request);
-            System.out.println(transaction.toString());
+            transaction.setUser(user);
             transactionRepository.save(transaction);
         }
         return "Added all transactions!";
