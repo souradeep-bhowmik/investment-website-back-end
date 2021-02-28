@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -34,6 +36,7 @@ public class Transaction {
 
     @Getter
     @Setter
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
     @Getter
