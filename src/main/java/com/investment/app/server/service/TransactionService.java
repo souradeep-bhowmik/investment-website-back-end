@@ -30,4 +30,11 @@ public class TransactionService {
         return "Added all transactions!";
     }
 
+    public List<String> returnCostBasis() {
+        List<Transaction> transactions = getAllTransactions();
+        int nextBuyIndex = 0;
+        for (int i = 0; i < transactions.size(); i++) {
+        }
+        return null;
+    }
 }
