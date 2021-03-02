@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.investment.app.server.controller.BaseController;
 import com.investment.app.server.entity.Transaction;
+import com.investment.app.server.model.CostBasisResponse;
 import com.investment.app.server.model.TransactionRequest;
 import com.investment.app.server.service.TransactionService;
 
@@ -42,7 +43,7 @@ public class TransactionController extends BaseController {
     }
 
     @GetMapping(path = "/getcostbasis")
-    public List<String> getCostBasis(@RequestParam String user) {
+    public List<CostBasisResponse> getCostBasis(@RequestParam String user) {
         return transactionService.returnCostBasis();
     }
 
