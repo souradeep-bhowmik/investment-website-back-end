@@ -47,7 +47,6 @@ public class TransactionService {
         int end = 0;
 
         for (int i = 0; i < transactions.size(); i++) {
-            System.out.println(i);
             BigDecimal profit, originalCost, currentCost, totalSellPrice;
             Date buyDate = new Date();
             if (transactions.get(i).getSize() > 0) { // Buy record, so add it to the temp array and increase end pointer
@@ -93,8 +92,7 @@ public class TransactionService {
                 resultList.add(new CostBasisResponse(transactions.get(i).getDate(), buyDate,
                         transactions.get(i).getSize() * (-1), transactions.get(i).getPrice(),
                         transactions.get(i).getFees(), totalSellPrice, originalCost, profit,
-                        (profit.divide(originalCost, 5, RoundingMode.HALF_DOWN)).multiply(new BigDecimal(100))
-                                .toString() + "%"));
+                        (profit.divide(originalCost, 5, RoundingMode.HALF_DOWN)).multiply(new BigDecimal(100))));
             }
         }
         return resultList;

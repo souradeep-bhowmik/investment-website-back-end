@@ -52,6 +52,6 @@ public class CostBasisResponse {
 
     @Getter
     @Setter
-    private String profitPercentage;
+    private BigDecimal profitPercentage;
 
 }
