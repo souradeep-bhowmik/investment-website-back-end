@@ -1,5 +1,6 @@
 package com.investment.app.server.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -39,18 +40,18 @@ public class CostBasisResponse {
 
     @Getter
     @Setter
-    private Double totalSellPrice;
+    private BigDecimal totalSellPrice;
 
     @Getter
     @Setter
-    private Double originalCost;
+    private BigDecimal originalCost;
 
     @Getter
     @Setter
-    private Double profit;
+    private BigDecimal profit;
 
     @Getter
     @Setter
-    private Double profitPercentage;
+    private String profitPercentage;
 
 }
