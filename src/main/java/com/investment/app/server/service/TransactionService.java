@@ -29,9 +29,16 @@ public class TransactionService {
     }
 
     public String saveTransactions(List<TransactionRequest> transactions, String user) {
+        int i = 0;
+        if (transactions.size() == 0)
+            return "No data to upload!";
         Transaction transaction;
         for (TransactionRequest request : transactions) {
+            i++;
             transaction = TransactionConverter.TO_MODEL.apply(request);
+            if (transaction.getDate() == null || transaction.getFees() == null || transaction.getPrice() == null
+                    || transaction.getProduct() == null || transaction.getSize() == null)
+                return ("Error in " + i + "th record. Not expecting any null values! Data prion to that is saved.");
             transaction.setUser(user);
             transactionRepository.save(transaction);
         }
